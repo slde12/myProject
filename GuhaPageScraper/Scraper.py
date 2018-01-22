@@ -1,15 +1,17 @@
+# python 2 project
 # Guha's page has too many files and they are all word,
 # I'm too lazy to download them one by one and convert them
 # to pdf manually. So I made this scraper to crawl his page 
 # and a powershell batch script to convert them to pdf 
 
-import urllib2
+
 import urllib
-from BeautifulSoup import BeautifulSoup
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 import re
 
 url = "http://www.cs.ucf.edu/~dmarino/ucf/cop3503/lectures/"
-response = urllib2.urlopen(url)
+response = urlopen(url)
 soup = BeautifulSoup(response)
 
 downloader = urllib.URLopener()
